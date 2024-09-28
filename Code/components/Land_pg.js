@@ -1,9 +1,9 @@
 import React from 'react';
 import '../App.css';
 import { Button } from './Button';
-import './HeroSection.css';
+import './Land_pg.css';
 
-function HeroSection() {
+function Land_pg() {
   return (
     <div className='hero-container'>
       <video src='/videos/video-1.mp4' autoPlay loop muted />
@@ -30,4 +30,4 @@ function HeroSection() {
   );
 }
 
-export default HeroSection;
+export default Land_pg;
