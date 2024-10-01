@@ -1,13 +1,13 @@
 import React from 'react';
-import '../../App.css';
+import '../../Code_css/App.css';
 import Cards from '../Cards';
-import HeroSection from '../HeroSection';
-import Footer from '../Footer';
+import Land_pg from '../Land_pg';
+import Footer from '../footer';
 
 function Home() {
   return (
     <>
-      <HeroSection />
+      <Land_pg />
       <Cards />
       <Footer />
     </>
