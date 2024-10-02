@@ -1,7 +1,7 @@
 import React from 'react';
-import '../App.css';
+import '../App';
 import { Button } from './Button';
-import './Land_pg.css';
+import './Components_css/Land_pg.css';
 
 function Land_pg() {
   return (
