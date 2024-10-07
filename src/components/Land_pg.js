@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App';
-import { Button } from './Button';
+import { Button } from './Btn';
 import './Components_css/Land_pg.css';
 
 function Land_pg() {
