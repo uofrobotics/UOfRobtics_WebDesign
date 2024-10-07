@@ -3,7 +3,7 @@ import '../App';
 import { Button } from './Button';
 import './Components_css/Land_pg.css';
 
-function Land_pg() {
+function Landpg() {
   return (
     <div className='hero-container'>
       <video src='/videos/video-1.mp4' autoPlay loop muted />
@@ -30,4 +30,4 @@ function Land_pg() {
   );
 }
 
-export default Land_pg;
+export default Landpg;
