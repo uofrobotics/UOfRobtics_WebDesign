@@ -5,6 +5,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color:#fff;
 }
 
 .footer-subscription {
@@ -114,6 +115,7 @@
 }
 
 .social-icons {
+  padding-top: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -130,6 +132,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 16px;
+  width: 30px;
 }
 
 .website-rights {
