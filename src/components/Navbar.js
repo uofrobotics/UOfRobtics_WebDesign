@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import './Components_css/Navbar.css';
-import newLogo from '../svg/Selection.svg';
+import newLogo from '../svg/logo.svg';
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -34,8 +34,9 @@ function Navbar() {
       <nav className='navbar'>
         <div className='navbar-container'>
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-           Robotics
-            </Link>
+            <img src={newLogo} alt="URobotics Logo" className='navbar-logo-img' />
+            <span className='navbar-logo-text'>URobotics</span>
+          </Link>
 
           <div className='menu-icon' onClick={handleClick}>
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
@@ -57,11 +58,7 @@ function Navbar() {
                 About Us
               </Link>
             </li>
-            <li>
-              <Link to='/sign-up' className='nav-links-mobile' onClick={closeMobileMenu}>
-                Sign Up
-              </Link>
-            </li>
+           
           </ul>
           {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>}
         </div>

@@ -6,6 +6,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
   background-image: var(--hero-background-image); /* Use the CSS variable for the background */
   background-repeat: no-repeat;
   background-size: auto;
