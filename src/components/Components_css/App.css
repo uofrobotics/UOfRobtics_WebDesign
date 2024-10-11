@@ -42,3 +42,142 @@
   color: #fff;
   font-size: 100px;
 }
+
+/* events page */
+.events-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #ccc;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 20px; /* Adjust the gap between cards as needed */
+  justify-items: center; /* Center the items horizontally */
+  margin-top: 50px;
+}
+
+.event-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 300px; /* Adjust as needed */
+  height: 400px; /* Adjust as needed */
+  overflow: hidden;
+  border: 1px solid #ccc;
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px;
+  text-align: center;
+  background-color: #000000;
+  color: #110909c4;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: url('../../svg/Selection.svg') no-repeat center center;
+}
+
+.event-card:hover {
+  transform: translateY(-10px); /* Lift the card on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+.event-image, .event-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.event-card:hover .event-image,
+.event-card:hover .event-video {
+  opacity: 1;
+}
+
+.event-title, .event-date, .event-description {
+  z-index: 1; /* Ensure text is above the image */
+  color: #000; /* Adjust text color as needed */
+  transition: opacity 0.3s ease;
+}
+
+.event-card:hover .event-title, 
+.event-card:hover .event-date, 
+.event-card:hover .event-description {
+  opacity: 0;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80%;
+  }
+}
+
+@keyframes reversetyping {
+  from {
+    width:80%;
+  }
+  to {
+    width: 0;
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #f1f1f1d7; /* Adjust the caret color as needed */
+  }
+}
+
+.events-title {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 60px; /* Increase the font size */
+  font-weight: bold; /* Make the text bold */
+  color: white; /* Change the text color */
+  text-shadow: 2px 2px 4px rgba(21, 31, 25, 0.904); /* Add a text shadow */
+  margin-bottom: 20px; /* Add some margin below the title */
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.15em solid #333; /* Adjust the caret color as needed */
+  animation: typing 6s steps(60, end) infinite, blink-caret 0.75s step-end infinite;
+  text-decoration: underline; /* Add underline to the text */
+}
+
+.event-date {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.event-description {
+  font-size: 16px;
+  color: #777;
+}
+
+.past-events-title {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 60px; /* Increase the font size */
+  font-weight: bold; /* Make the text bold */
+  color: white; /* Change the text color */
+  text-shadow: 2px 2px 4px rgba(21, 31, 25, 0.904); /* Add a text shadow */
+  margin-bottom: 20px; /* Add some margin below the title */
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.15em solid #333; /* Adjust the caret color as needed */
+  animation: reversetyping 6s steps(60, end) infinite, blink-caret 1s step-end infinite;
+  text-decoration: underline; /* Add underline to the text */
+}
