@@ -1,22 +1,10 @@
 .footer-container {
   background-color: #242424;
-<<<<<<< HEAD
-  padding: 2rem 0; /* Adjusted padding */
-=======
   padding: 4rem 0 2rem 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color:#fff;
-}
-
-.footer-subscription {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
->>>>>>> 4452499ce9d9a262c481860a269ee09073d6a022
   text-align: center;
   color: #fff;
 }
@@ -39,16 +27,6 @@
 .social-link:hover {
   color: #e9e9e9;
   transition: 0.3s ease-out;
-}
-<<<<<<< HEAD
-=======
-
-.footer-email-form h2 {
-  margin-bottom: 2rem;
-}
-
-.footer-input::placeholder {
-  color: #b1b1b1;
 }
 
 /* Social Icons */
@@ -120,5 +98,5 @@
 }
 
 @media screen and (max-width: 768px) {
+  /* Add specific styles for smaller screens if needed */
 }
->>>>>>> 4452499ce9d9a262c481860a269ee09073d6a022

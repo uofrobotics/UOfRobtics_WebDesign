@@ -1,7 +1,15 @@
 import React from 'react';
 import '../components/Components_css/App.css';
+import Footer from '../components/footer'
 
 
-export default function About() {
-  return;
+ function About() {
+  return(
+<div>
+    <Footer />
+    </div>
+  );
+
 }
+
+export default About;

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import './Components_css/Navbar.css';
-import newLogo from '../svg/logo.svg';
+
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -34,7 +34,7 @@ function Navbar() {
       <nav className='navbar'>
         <div className='navbar-container'>
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-            <img src={newLogo} alt="URobotics Logo" className='navbar-logo-img' />
+  
             <span className='navbar-logo-text'>URobotics</span>
           </Link>
 
