@@ -6,15 +6,19 @@ import newLogo from'../svg/Selection.svg'
 
 function Landpg() {
   return (
+   
     <div
       className='hero-container'
       style={{
-        '--hero-background-image': `url(${newLogo})`, // Pass the SVG URL as a CSS variable
+        '--hero-background-image': `url(${newLogo})`, 
       }}
     >
 
+
       <h1>Welcome to URobotics</h1>
       <p>What are you waiting for?</p>
+
+     
 
       <div className='hero-btns'>
 
