@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/UOfRobtics_WebDesign/static/css/main.33a5a416.css",
+    "main.js": "/UOfRobtics_WebDesign/static/js/main.49dd9fca.js",
+    "static/media/img4.JPG": "/UOfRobtics_WebDesign/static/media/img4.a252f11fd0fb67832434.JPG",
+    "static/media/about-img-1.jpg": "/UOfRobtics_WebDesign/static/media/about-img-1.139fe1a2bd4ef3bf2fbb.jpg",
+    "static/media/img3.jpg": "/UOfRobtics_WebDesign/static/media/img3.74d1608bedeca16d430a.jpg",
+    "static/media/img1.jpg": "/UOfRobtics_WebDesign/static/media/img1.c4a8d0013b2c2f8d8e10.jpg",
+    "static/media/about-img-2.jpeg": "/UOfRobtics_WebDesign/static/media/about-img-2.c4fb5fa1355c86b2ac95.jpeg",
+    "static/media/instagram_logo.png": "/UOfRobtics_WebDesign/static/media/instagram_logo.629a8948d3c64421454d.png",
+    "static/media/img2.jpg": "/UOfRobtics_WebDesign/static/media/img2.c0fbe87bc3ca8bbcbd0f.jpg",
+    "static/media/about-img-3.jpg": "/UOfRobtics_WebDesign/static/media/about-img-3.c708365cc7860fabe374.jpg",
+    "static/media/Selection.svg": "/UOfRobtics_WebDesign/static/media/Selection.c087e0ff574c86da36efc7ddfa60f763.svg",
+    "static/media/discord.png": "/UOfRobtics_WebDesign/static/media/discord.b6d1d9a1bf911da061e8.png",
+    "static/media/facebook_logo.png": "/UOfRobtics_WebDesign/static/media/facebook_logo.790642551cd99bb66a7e.png",
+    "index.html": "/UOfRobtics_WebDesign/index.html",
+    "main.33a5a416.css.map": "/UOfRobtics_WebDesign/static/css/main.33a5a416.css.map",
+    "main.49dd9fca.js.map": "/UOfRobtics_WebDesign/static/js/main.49dd9fca.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.33a5a416.css",
+    "static/js/main.49dd9fca.js"
+  ]
+}
