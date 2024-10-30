@@ -1,45 +1,42 @@
 import React, { useState } from 'react';
-import CustomInput from './CustomInput';
-import { VALIDATOR_REQUIRE, VALIDATOR_EMAIL, VALIDATOR_MINLENGTH } from './validators';
 import './Components_css/RegistrationModal.css';
 
-function RegistrationModal({ show, onClose }) {
-  const [formState, setFormState] = useState({
-    inputs: {
-      email: {
-        value: '',
-        isValid: false,
-      },
-      password: {
-        value: '',
-        isValid: false,
-      },
-    },
-    isValid: false,
-  });
+function RegistrationModal({ show, onClose, isHomePage }) {
+  const [isLoginMode, setIsLoginMode] = useState(isHomePage ? true : false);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
-  const inputHandler = (id, value, isValid) => {
-    setFormState((prevFormState) => {
-      const updatedInputs = {
-        ...prevFormState.inputs,
-        [id]: { value, isValid },
-      };
-      let formIsValid = true;
-      for (const inputId in updatedInputs) {
-        formIsValid = formIsValid && updatedInputs[inputId].isValid;
-      }
-      return {
-        inputs: updatedInputs,
-        isValid: formIsValid,
-      };
-    });
-  };
-
-  const formSubmitHandler = (event) => {
+  const formSubmitHandler = async (event) => {
     event.preventDefault();
-    if (formState.isValid) {
-      // Here we can call a state API to interact with Discord or other services
-      console.log('Form Submitted', formState.inputs);
+
+    if (isHomePage) {
+      // Mock authentication for login/signup on home page
+      if (username && password) {
+        alert('User logged in successfully!');
+        onClose();
+      }
+    } else {
+      // Webhook for registration on events page
+      const webhookURL = 'https://discord.com/api/webhooks/1301071779040595978/ogZMLeYOe_maqxqhm3TY6Iy561v0Vo0Dcoih-vMNb-iYtRhIOy-M3ZVY6zXyD5CnmRi5';
+
+      try {
+        const message = {
+          content: `New user registered:\nEmail: ${username}`,
+        };
+
+        await fetch(webhookURL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(message),
+        });
+
+        alert('Registration successful and Discord notified!');
+        onClose();
+      } catch (error) {
+        console.error('Error sending message to Discord:', error);
+      }
     }
   };
 
@@ -49,30 +46,39 @@ function RegistrationModal({ show, onClose }) {
 
   return (
     <div className="modal-overlay">
-      <div className="modal-content">
-        <h2>Register Now</h2>
+      <div className={isHomePage ? "modal-content-large" : "modal-content"}>
+        <h2>{isHomePage ? (isLoginMode ? 'Login' : 'Sign Up') : 'Register Now'}</h2>
         <form onSubmit={formSubmitHandler}>
-          <CustomInput
-            id="email"
-            type="email"
-            label="E-Mail"
-            validators={[VALIDATOR_REQUIRE(), VALIDATOR_EMAIL()]}
-            errorText="Please enter a valid email."
-            onInput={inputHandler}
-          />
-          <CustomInput
-            id="password"
-            type="password"
-            label="Password"
-            validators={[VALIDATOR_REQUIRE(), VALIDATOR_MINLENGTH(6)]}
-            errorText="Please enter a valid password (at least 6 characters)."
-            onInput={inputHandler}
-          />
-          <button type="submit" disabled={!formState.isValid}>
-            Register
-          </button>
+          <div className="form-control">
+            <label htmlFor="username">{isHomePage ? 'Username' : 'E-Mail'}</label>
+            <input
+              type="text"
+              id="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+          </div>
+          <div className="form-control">
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+          <button type="submit">{isHomePage ? (isLoginMode ? 'LOGIN' : 'SIGN UP') : 'Register'}</button>
         </form>
-        <button className="close-button" onClick={onClose}>Close</button>
+        {isHomePage && (
+          <button onClick={() => setIsLoginMode((prevMode) => !prevMode)} className="switch-mode-button">
+            SWITCH TO {isLoginMode ? 'SIGN UP' : 'LOGIN'}
+          </button>
+        )}
+        <button className="close-button" onClick={onClose}>
+          Close
+        </button>
       </div>
     </div>
   );

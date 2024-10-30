@@ -11,12 +11,34 @@
     z-index: 1000;
   }
   
+  .modal-content-large {
+    background: white;
+    padding: 3rem;
+    border-radius: 15px;
+    max-width: 600px;
+    width: 90%;
+  }
+  
   .modal-content {
     background: white;
     padding: 2rem;
     border-radius: 10px;
-    max-width: 500px;
-    width: 90%;
+    max-width: 400px;
+    width: 80%;
+  }
+  
+  .form-control {
+    margin-bottom: 1.5rem;
+  }
+  
+  .switch-mode-button {
+    background-color: #1f98f4;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    border-radius: 5px;
   }
   
   .close-button {
@@ -26,5 +48,18 @@
     padding: 0.5rem 1rem;
     margin-top: 1rem;
     cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .modal-content-large {
+      padding: 2rem;
+      width: 95%;
+    }
+  
+    .modal-content {
+      padding: 1.5rem;
+      width: 95%;
+    }
   }
   
