@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
+import RegistrationModal from './RegistrationModal';
 import './Components_css/Navbar.css';
-
 
 function Navbar() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
+  const [showModal, setShowModal] = useState(false);
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
+  const openModalHandler = () => setShowModal(true);
+  const closeModalHandler = () => setShowModal(false);
 
   const showButton = () => {
     if (window.innerWidth <= 960) {
@@ -23,7 +26,6 @@ function Navbar() {
     showButton();
     window.addEventListener('resize', showButton);
 
-    // Cleanup function to prevent memory leaks
     return () => {
       window.removeEventListener('resize', showButton);
     };
@@ -34,7 +36,6 @@ function Navbar() {
       <nav className='navbar'>
         <div className='navbar-container'>
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-  
             <span className='navbar-logo-text'>URobotics</span>
           </Link>
 
@@ -58,11 +59,15 @@ function Navbar() {
                 About Us
               </Link>
             </li>
-           
           </ul>
-          {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>}
+          {button && (
+            <Button buttonStyle='btn--outline' onClick={openModalHandler}>
+              SIGN UP
+            </Button>
+          )}
         </div>
       </nav>
+      <RegistrationModal show={showModal} onClose={closeModalHandler} />
     </>
   );
 }

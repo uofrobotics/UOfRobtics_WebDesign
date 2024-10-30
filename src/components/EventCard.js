@@ -1,7 +1,7 @@
 import React from 'react';
-import '../components/Components_css/EventCard.css';
+import './Components_css/EventCard.css';
 
-function EventCard({ imgSrc, title, date, location, type, buttonText }) {
+function EventCard({ imgSrc, title, date, location, type, buttonText, onClick }) {
   return (
     <div className="event-card">
       <img src={imgSrc} alt={title} className="event-card__img" />
@@ -10,7 +10,9 @@ function EventCard({ imgSrc, title, date, location, type, buttonText }) {
         <p className="event-card__date">{date}</p>
         <p className="event-card__location">{location}</p>
         <p className="event-card__type">{type}</p>
-        <button className="event-card__button">{buttonText}</button>
+        <button className="event-card__button" onClick={onClick}>
+          {buttonText}
+        </button>
       </div>
     </div>
   );
