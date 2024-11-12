@@ -4,7 +4,7 @@ import instagram_logo from '../images/instagram_logo.png';
 import discord_logo from '../images/discord.png';
 import './Components_css/Footer.css';
 
-function Footer() {
+function footer() {
   return (
     <footer className="footer-container">
       <p>Contact us at: support@uofrobotics.com</p>
@@ -17,4 +17,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default footer;

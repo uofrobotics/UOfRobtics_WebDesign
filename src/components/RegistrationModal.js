@@ -1,17 +1,27 @@
 import React, { useState } from 'react';
 import './Components_css/RegistrationModal.css';
+import './validators';
+import { validate, VALIDATOR_REQUIRE, VALIDATOR_EMAIL } from './validators';
 
 function RegistrationModal({ show, onClose, isHomePage }) {
   const [isLoginMode, setIsLoginMode] = useState(isHomePage ? true : false);
   const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [isUsernameValid, setIsUsernameValid] = useState(true);
 
   const formSubmitHandler = async (event) => {
     event.preventDefault();
 
+    const usernameIsValid = validate(username, [VALIDATOR_REQUIRE(), VALIDATOR_EMAIL()]);
+    setIsUsernameValid(usernameIsValid);
+
+    if (!usernameIsValid) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+
     if (isHomePage) {
       // Mock authentication for login/signup on home page
-      if (username && password) {
+      if (username) {
         alert('User logged in successfully!');
         onClose();
       }
@@ -56,18 +66,10 @@ function RegistrationModal({ show, onClose, isHomePage }) {
               id="username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
+              className={!isUsernameValid ? 'invalid' : ''}
               required
             />
-          </div>
-          <div className="form-control">
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
+            {!isUsernameValid && <p className="error-text">Please enter a valid email address.</p>}
           </div>
           <button type="submit">{isHomePage ? (isLoginMode ? 'LOGIN' : 'SIGN UP') : 'Register'}</button>
         </form>

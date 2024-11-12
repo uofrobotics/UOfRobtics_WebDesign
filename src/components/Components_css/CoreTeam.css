@@ -2,6 +2,7 @@
   padding: 4rem;
   background: #f9f9f9;
   text-align: center;
+  overflow: hidden;
 }
 
 .core-team h2 {
@@ -15,11 +16,26 @@
   color: #666;
 }
 
-.core-team__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+.core-team__sliding-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.core-team__sliding-track {
+  display: flex;
   gap: 2rem;
-  justify-items: center;
+  width: calc(200% + 2rem);
+  animation: slide-horizontal 60s linear infinite;
+}
+
+@keyframes slide-horizontal {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .core-team__card {
@@ -27,14 +43,19 @@
   border-radius: 15px;
   padding: 1.5rem;
   box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
-  max-width: 250px;
+  min-width: 200px;
   text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.core-team__card:hover {
+  transform: scale(1.05);
 }
 
 .core-team__img {
-  width: 120px; /* Adjust the size as needed */
-  height: 120px; /* Adjust the size as needed */
-  border-radius: 50%; /* Makes the image circular */
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
   object-fit: cover;
   margin-bottom: 1rem;
 }
@@ -49,4 +70,10 @@
   font-size: 0.9rem;
   color: #777;
   margin: 0.2rem 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.core-team__card:hover .core-team__info p {
+  opacity: 1;
 }

@@ -4,7 +4,7 @@
   text-align: center;
 }
 
-h1 {
+h1, h2 {
   text-align: center;
   margin-bottom: 2rem;
 }
@@ -22,17 +22,19 @@ h1 {
   align-items: center;
   max-width: 1120px;
   width: 90%;
-  margin: 0 auto;
+  margin: 0 auto 4rem;
 }
 
 .about__wrapper {
   position: relative;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
 }
 
 .about__item {
   position: relative;
-  margin-bottom: 4rem;
   border-radius: 10px;
   transition: transform 0.3s ease;
 }
@@ -58,7 +60,6 @@ h1 {
   box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
 }
 
-/* Styling for the cards' content */
 .about__item__link {
   display: flex;
   flex-direction: column;
@@ -92,33 +93,13 @@ h1 {
   transform: scale(1.1);
 }
 
-.about__item__info {
-  padding: 20px 30px 30px;
-  background: #fff;
-}
-
-.about__item__text {
-  color: #252e48;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-/* Media Queries */
-@media only screen and (min-width: 1200px) {
-  .content__blog__container {
-    width: 84%;
-  }
-}
-
 @media only screen and (min-width: 1024px) {
   .about__item--large-center {
     width: 60%;
   }
-
   .about__item--right {
     width: 45%;
   }
-
   .about__item--left {
     width: 35%;
   }
