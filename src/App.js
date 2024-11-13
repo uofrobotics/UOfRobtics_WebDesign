@@ -8,11 +8,11 @@ import Projects from '../src/pages/Projects'; // Projects page
 
 import Navbar from './components/Navbar';
 import '../src/components/Components_css/App.css';
-import { AuthContextProvider } from './context/auth-context'; // Import AuthContextProvider
+
 
 function App() {
   return (
-    <AuthContextProvider>  {/* Wrap the entire Router within AuthContextProvider */}
+   
       <Router>
         <Navbar />
         <Routes>
@@ -22,7 +22,6 @@ function App() {
           <Route path="/projects" element={<Projects />} />
         </Routes>
       </Router>
-    </AuthContextProvider>
   );
 }
 

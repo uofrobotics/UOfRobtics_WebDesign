@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../context/auth-context';  // Import the AuthContext
 import RegistrationModal from './RegistrationModal';
 import './Components_css/Navbar.css';
 
@@ -9,8 +8,6 @@ function Navbar() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
   const [showModal, setShowModal] = useState(false);
-
-  const auth = useContext(AuthContext);  // Access authentication context
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -63,19 +60,10 @@ function Navbar() {
               </Link>
             </li>
           </ul>
-          {auth.isLoggedIn ? (
-            <>
-              <span className='navbar-username'>{auth.username}</span>
-              <Button buttonStyle='btn--outline' onClick={auth.logout}>
-                LOGOUT
-              </Button>
-            </>
-          ) : (
-            button && (
-              <Button buttonStyle='btn--outline' onClick={openModalHandler}>
-                SIGN UP
-              </Button>
-            )
+          {button && (
+            <Button buttonStyle='btn--outline' onClick={openModalHandler}>
+              Newsletter
+            </Button>
           )}
         </div>
       </nav>

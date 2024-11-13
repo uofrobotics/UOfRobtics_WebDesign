@@ -10,9 +10,6 @@ function AboutItem(props) {
           <figure className="about__item__pic__wrap">
             <img src={props.src} alt={props.alt} className="about__item__img" />
           </figure>
-          <div className="about__item__info">
-            <h2 className="about__item__text">{props.text}</h2>
-          </div>
         </Link>
       </li>
     </>

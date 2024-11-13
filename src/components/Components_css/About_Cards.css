@@ -113,3 +113,10 @@ h1, h2 {
     margin: 0 auto;
   }
 }
+.about__text-block--projects,
+.about__text-block--talks {
+  width: 80%;
+  margin: 1rem auto 2rem;
+  color: #666;
+  text-align: justify;
+}
