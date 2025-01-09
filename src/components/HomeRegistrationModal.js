@@ -8,7 +8,7 @@ function RegistrationModal({ show, onClose, isHomePage }) {
     event.preventDefault();
 
     // Webhook for sending email to Discord channel
-    const webhookURL = 'https://discord.com/api/webhooks/1301071779040595978/ogZMLeYOe_maqxqhm3TY6Iy561v0Vo0Dcoih-vMNb-iYtRhIOy-M3ZVY6zXyD5CnmRi5';
+    //const webhookURL = 'https://discord.com/api/webhooks/1301071779040595978/ogZMLeYOe_maqxqhm3TY6Iy561v0Vo0Dcoih-vMNb-iYtRhIOy-M3ZVY6zXyD5CnmRi5';
 
     try {
       const message = {
