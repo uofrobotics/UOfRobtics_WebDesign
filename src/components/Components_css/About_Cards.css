@@ -120,3 +120,17 @@ h1, h2 {
   color: #666;
   text-align: justify;
 }
+.about__wrapper {
+  position: relative; /* The wrapper will be the reference point for all the about items */
+  margin-top: 50px;   /* Adjust to add some spacing as needed */
+}
+
+.about__item {
+  position: absolute;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.about__item:hover {
+  transform: scale(1.05); /* Slightly zoom in on hover for a cool effect */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add a shadow for better visual emphasis */
+}
