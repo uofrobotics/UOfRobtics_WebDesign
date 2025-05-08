@@ -60,7 +60,7 @@ function Events() {
           <EventCard key={event.id} {...event} />
         ))}
       </div>
-      <h1>Past Events</h1>
+      <h1>Past Event</h1>
       <div className="events-grid">
         {pastEvents.map(event => (
           <EventCard key={event.id} {...event} />
@@ -69,7 +69,12 @@ function Events() {
      
       <RegistrationModal show={showModal} onClose={closeModalHandler} />
       <MediaViewModal show={showMediaModal} mediaSrc={selectedMedia} mediaType={mediaType} onClose={closeMediaModalHandler} />
+      
+      
+      <div>
       <Footer />
+      </div>
+     
     </div>
   );
 }
