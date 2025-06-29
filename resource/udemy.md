@@ -27,9 +27,6 @@ I'll attach the access to the uemy itself so you can  use it as need be.
 
   first the course link : https://www.udemy.com/share/102g8S3@xLw4ur6N4ku7ywIfEIwSWh4xGEjN4pdOukX1oJYjHmfC5LB1wEfCRVu8PSteB9TiAw==/
 
-  
-  login ::justusdab@gmail.com
-  password :: Donttalk.16
 
 
 
