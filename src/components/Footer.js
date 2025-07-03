@@ -11,7 +11,7 @@ function Footer() {
       <div className="social-icons">
         <a className="social-icon-link" href="https://www.facebook.com/UofRobotics?mibextid=ZbWKwL"><img className="social-logo"alt =" facebook" src={facebook_logo} /></a>
         <a className="social-icon-link" href="https://www.instagram.com/uof_robotics/profilecard/?igsh=MWUxNXN5OHZuczF2Zg%3D%3D"><img className="social-logo" alt=" instagram" src={instagram_logo} /></a>
-        <a className="social-icon-link" href="https://discord.gg/EJudSWQY"><img className="social-logo" alt="Discord" src={discord_logo}  /></a>
+        <a className="social-icon-link" href="https://discord.gg/qTNrxDz8"><img className="social-logo" alt="Discord" src={discord_logo}  /></a>
       </div>
     </footer>
   );
