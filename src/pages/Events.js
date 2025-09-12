@@ -53,6 +53,7 @@ function Events() {
   ];
 
   return (
+    <>
     <div className="events-page">
       <h1>Upcoming Events</h1>
       <div className="events-grid">
@@ -71,11 +72,10 @@ function Events() {
       <MediaViewModal show={showMediaModal} mediaSrc={selectedMedia} mediaType={mediaType} onClose={closeMediaModalHandler} />
       
       
-      <div>
-      <Footer />
-      </div>
      
     </div>
+    <Footer />
+    </>
   );
 }
 
