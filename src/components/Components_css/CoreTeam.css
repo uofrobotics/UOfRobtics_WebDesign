@@ -1,3 +1,57 @@
+/* Adjust the container width and padding */
+.core-team {
+  padding: 4rem 2rem; /* Reduced horizontal padding */
+  background: #f9f9f9;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Modify sliding container for better control */
+.core-team__sliding-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px; /* Add maximum width */
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Update sliding track animation */
+.core-team__sliding-track {
+  display: flex;
+  gap: 2rem;
+  width: 200%; /* Ensures content is duplicated */
+  animation: slide-horizontal 30s linear infinite; /* Reduced time from 60s to 30s */
+}
+
+/* Adjust card sizing and spacing */
+.core-team__card {
+  flex: 0 0 250px; /* Fixed card width */
+  background: #fff;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+/* Update info text visibility */
+.core-team__info p {
+  font-size: 0.9rem;
+  color: #777;
+  margin: 0.2rem 0;
+  opacity: 1; /* Changed from 0 to always visible */
+  transition: opacity 0.3s ease;
+}
+
+/* Remove hover opacity since text is always visible now */
+.core-team__card:hover .core-team__info p {
+  opacity: 1;
+}
+
+/* Optional: Add pause on hover */
+.core-team__sliding-track:hover {
+  animation-play-state: paused;
+}
 .core-team {
   padding: 4rem;
   background: #f9f9f9;
