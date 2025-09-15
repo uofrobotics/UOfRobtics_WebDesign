@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 import '../components/Components_css/CoreTeam.css';
 import teamImg1 from '../images/about-img-1.jpg';
 import teamImg2 from '../images/about-img-3.jpg';
@@ -13,6 +13,19 @@ function CoreTeam() {
     { id: 5, name: "Mazen Ahmed", role: "VICE-PRESIDENT", major: "M.A", img: teamImg2 },
     { id: 6, name: "Godwill Attisso", role: "VICE-PRESIDENT", major: "G.A", img: teamImg1 },
   ];
+
+  useEffect(()=>{
+    const track = document.querySelector('.core-team__sliding-track');
+    if(track){
+      const trackItems = track.children; // Changed from items to trackItems
+      Array.from(trackItems).forEach(element => {
+        const clone = element.cloneNode(true);
+        track.appendChild(clone);
+      });
+  
+    }
+  },[]);
+
 
   return (
     <div className="core-team">
