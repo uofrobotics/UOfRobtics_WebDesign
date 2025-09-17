@@ -3,7 +3,7 @@ import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import RegistrationModal from './RegistrationModal';
 import './Components_css/Navbar.css';
-import banner from '../images/Urobo_Banner3.png';
+import banner from '../images/Urobo_Banner31.png';
 
 function Navbar() {
   const [click, setClick] = useState(false);
