@@ -3,6 +3,7 @@ import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import RegistrationModal from './RegistrationModal';
 import './Components_css/Navbar.css';
+import banner from '../images/Urobo_Banner31.png';
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -36,7 +37,7 @@ function Navbar() {
       <nav className='navbar'>
         <div className='navbar-container'>
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-            <span className='navbar-logo-text'>URobotics</span>
+            <img src={banner} alt='URobotics logo' className='navbar-logo2-img'></img>
           </Link>
 
           <div className='menu-icon' onClick={handleClick}>
