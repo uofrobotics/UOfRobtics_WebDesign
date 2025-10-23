@@ -71,6 +71,11 @@
   display: none;
 }
 
+.navbar-logo2-img {
+  height: 65px;
+  width: auto;
+}
+
 @media screen and (max-width: 960px) {
   .nav-menu {
     display: grid; /* Use grid layout */
@@ -117,9 +122,11 @@
     cursor: pointer;
     color: #3f10a68a; 
   }
-}
 
-.navbar-logo2-img{
-  height: 60px;
-  width: auto;
+    .navbar-logo2-img {
+      height: 50px;
+      width: auto;
+      position: relative;
+    }
+
 }
