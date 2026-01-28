@@ -24,6 +24,7 @@
     font-size: 2rem;
     color: #fff;
     cursor: pointer;
+    z-index: 1100;    /* Close button fix. */
   }
   
   .modal-media {
